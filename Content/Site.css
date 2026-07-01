@@ -1,0 +1,332 @@
+﻿.body-content {
+    margin-top: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+@media screen and (min-width: 768px) {
+    .body-content {
+        padding: 0;
+    }
+}
+
+/* Red-themed navbar and visual polish for Site.Master */
+
+/* Accent colors */
+:root {
+    --red-dark: #8b0000;
+    --red-medium: #620000;
+    --red-light: #370000;
+    --white-80: rgba(255,255,255,0.9);
+    --white-65: rgba(255,255,255,0.65);
+
+    /* Dark theme globals */
+    --bg-dark: #060606;
+    --panel-bg: #0f0f10;
+    --muted-white: rgba(255,255,255,0.75);
+}
+
+/* Navbar base */
+.navbar-red {
+    background: linear-gradient(180deg, var(--red-dark) 0%, var(--red-medium) 60%, var(--red-light) 100%);
+/*    border-bottom: 3px solid rgba(0,0,0,0.12);*/
+    box-shadow: 0 4px 18px rgba(198,40,40,0.18);
+    padding: 0.45rem 1rem;
+}
+
+/* Brand styling */
+.navbar-red .navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    color: var(--white-80) !important;
+    text-transform: uppercase;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Slight roundness for nav */
+.navbar-red .navbar-nav {
+    align-items: center;
+}
+
+/* Links */
+.navbar-red .nav-link {
+    color: var(--white-65) !important;
+    margin: 0 0.65rem;
+    padding: 1.45rem 1.46rem;
+    border-radius: 20px;
+    transition: all 160ms ease-in-out;
+}
+
+/* Hover/Focus */
+    .navbar-red .nav-link:hover,
+    .navbar-red .nav-link:focus {
+        color: #fff !important;
+        background: linear-gradient(180deg, #0f0f1067 0%, #1f000067 60%, #8b000067 100%);
+        transform: translateY(-1px);
+        text-decoration: none;
+        box-shadow: 0 6px 14px rgba(198,40,40,0.12);
+    }
+
+/* Active/current */
+.navbar-red .nav-item .active,
+.navbar-red .nav-link.active,
+.navbar-red .nav-link[aria-current="page"] {
+    color: #fff !important;
+    background: #060606;
+    box-shadow: inset 0 -3px 0 rgba(255,255,255,0.06);
+}
+
+/* Toggler button styles for small screens */
+.navbar-red .navbar-toggler {
+    border-color: rgba(255,255,255,0.18);
+}
+.navbar-red .navbar-toggler-icon {
+    filter: invert(100%) brightness(120%);
+    opacity: 0.95;
+}
+
+/* Make the navbar sticky on top with subtle transition */
+.navbar-red {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    transition: box-shadow 220ms ease, transform 220ms ease;
+}
+
+/* Optional: smaller brand on very small screens */
+@media (max-width: 420px) {
+    .navbar-red .navbar-brand {
+        font-size: 0.95rem;
+    }
+}
+
+/* --- App-specific dark theme styles --- */
+
+/* Page background and text */
+body {
+    background: linear-gradient(180deg, #020202 0%, var(--bg-dark) 100%);
+    color: var(--white-80);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hero section */
+.app-hero {
+    padding: 0.25rem 0.5rem;
+}
+
+/* Section headings */
+.section-title {
+    color: var(--white-80);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* Card (dark) */
+.card-dark {
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.12));
+    border: 1px solid rgba(255,255,255,0.04);
+    border-radius: 12px;
+    padding: 1rem;
+    color: var(--white-80);
+}
+
+/* Placeholder images and screenshots */
+.placeholder-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 1rem;
+    border-radius: 8px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+    border: 1px dashed rgba(255,255,255,0.04);
+    min-height: 160px;
+    color: var(--white-65);
+}
+
+/* Image fits the container without spilling out */
+.fit-img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* Icon placeholder used throughout */
+.icon-placeholder {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.02);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white-65);
+    font-size: 26px;
+}
+
+/* Primary red button */
+.btn-red {
+    background: var(--red-medium);
+    border-color: rgba(0,0,0,0.12);
+    color: #fff;
+    box-shadow: 0 6px 12px rgba(198,40,40,0.12);
+    border-radius: 8px;
+    padding: 0.5rem 0.9rem;
+    transition: transform 160ms ease, background 160ms ease;
+}
+.btn-red:hover,
+.btn-red:focus {
+    background: var(--red-dark);
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+/* Outline light button */
+.btn-outline-light {
+    color: var(--white-80);
+    border: 1px solid rgba(255,255,255,0.08);
+    background: transparent;
+    border-radius: 8px;
+}
+
+/* Form controls styling */
+.form-control {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.04);
+    color: var(--white-80);
+    border-radius: 8px;
+    padding: 0.5rem;
+}
+.form-label {
+    color: var(--white-80);
+}
+
+/* Small responsive tweaks */
+@media (max-width: 767px) {
+    .app-hero .display-4 {
+        font-size: 1.75rem;
+    }
+    .placeholder-img {
+        min-height: 120px;
+    }
+}
+
+/* ===== Fancy styles for Logout button ===== */
+
+/* Wrapper helps centering and spacing if needed */
+.logout-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+/* Primary logout visual */
+.btn-logout {
+    --logout-bg-1: linear-gradient(135deg, #ff6b6b 0%, #c40000 50%);
+    --logout-bg-2: linear-gradient(135deg, #ff8a8a 0%, #8b0000 100%);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 1.05rem;
+    border-radius: 999px; /* pill */
+    background: var(--logout-bg-1);
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    border: 0;
+    box-shadow:
+        0 8px 24px rgba(198,40,40,0.18),
+        inset 0 -2px 0 rgba(255,255,255,0.04);
+    cursor: pointer;
+    transition: transform 200ms cubic-bezier(.2,.9,.2,1), box-shadow 200ms ease, background 300ms ease;
+    overflow: hidden;
+    outline: none;
+}
+
+/* small icon on the left using pseudo-element */
+.btn-logout::before {
+    content: "↪";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    background: rgba(255,255,255,0.08);
+    border-radius: 6px;
+    font-size: 12px;
+    transform: translateY(0);
+    transition: transform 200ms ease, background 200ms ease;
+}
+
+/* subtle hover lift and background swap */
+.btn-logout:hover,
+.btn-logout:focus {
+    transform: translateY(-4px) scale(1.01);
+    background: var(--logout-bg-2);
+    box-shadow:
+        0 14px 40px rgba(198,40,40,0.26),
+        inset 0 -2px 0 rgba(255,255,255,0.04);
+}
+
+/* icon lift */
+.btn-logout:hover::before,
+.btn-logout:focus::before {
+    transform: translateY(-2px);
+    background: rgba(255,255,255,0.12);
+}
+
+/* active press */
+.btn-logout:active {
+    transform: translateY(0) scale(0.995);
+    box-shadow: 0 6px 18px rgba(198,40,40,0.14);
+}
+
+/* animated shine on hover */
+.btn-logout::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -40%;
+    width: 40%;
+    height: 200%;
+    background: linear-gradient(120deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.18) 50%, rgba(255,255,255,0.06) 100%);
+    transform: rotate(-25deg) translateX(-120%);
+    transition: transform 600ms cubic-bezier(.2,.9,.2,1);
+    pointer-events: none;
+}
+
+/* slide the shine across on hover */
+.btn-logout:hover::after,
+.btn-logout:focus::after {
+    transform: rotate(-25deg) translateX(220%);
+}
+
+/* accessible focus ring */
+.btn-logout:focus-visible {
+    box-shadow: 0 0 0 4px rgba(198,40,40,0.12), 0 10px 30px rgba(198,40,40,0.14);
+}
+
+/* small screens: ensure comfortable touch target */
+@media (max-width: 480px) {
+    .btn-logout {
+        padding: 0.75rem 1.2rem;
+        font-size: 0.95rem;
+    }
+}
+
